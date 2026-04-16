@@ -23,7 +23,7 @@ export default function Footer() {
               <li key={link.name}>
                 <a 
                   href={link.href} 
-                  className="font-mono font-bold text-dim-grey hover:text-scoot-yellow transition-colors duration-200"
+                  className="font-mono font-bold text-dim-grey hover:text-scoot-yellow transition-colors duration-200 md:text-base"
                 >
                   {link.name}
                 </a>

@@ -32,7 +32,7 @@ export default function HowItWorks() {
               <h4 className="text-dark-navy mb-4">
                 {step.title}
               </h4>
-              <p className="text-dim-grey md:pr-4">
+              <p className="text-dim-grey font-sans font-normal text-[15px] leading-[25px] text-center md:pr-4">
                 {step.description}
               </p>
             </div>

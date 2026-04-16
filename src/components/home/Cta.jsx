@@ -12,12 +12,12 @@ export default function Cta() {
       {/* Content Container */}
       <div className="relative max-w-7xl mx-auto px-8 flex flex-col lg:flex-row items-center justify-between z-10 gap-10">
         
-        <h2 className="text-white text-center lg:text-left max-w-md tracking-tight">
+        <h2 className="text-white font-mono font-bold text-[32px] leading-[32px] tracking-[-1.43px] text-center lg:text-left w-full lg:max-w-md">
           Sign up and Scoot off today
         </h2>
         
         {/* App Store Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-row gap-4">
           <a href="#" className="transition-transform hover:scale-105">
             <img src="/assets/icons/AppStore.svg" alt="Available on the App Store" className="h-14" />
           </a>
