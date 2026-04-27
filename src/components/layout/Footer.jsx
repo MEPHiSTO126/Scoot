@@ -1,4 +1,5 @@
 // src/components/layout/Footer.jsx
+import { Link } from 'react-router-dom';
 import { NAV_LINKS } from '../../constants/navigation';
 
 export default function Footer() {
@@ -9,24 +10,24 @@ export default function Footer() {
         {/* Left Section: Logo + Navigation */}
         <div className="flex flex-col md:flex-row items-center gap-14">
           
-          <a href="/">
+          <Link to="/">
             {/* The CSS filters turn the dark SVG completely white */}
             <img 
               src="/assets/logo/logo.svg" 
               alt="Scoot Logo" 
               className="h-7 brightness-0 invert" 
             />
-          </a>
+          </Link>
           
           <ul className="flex flex-col md:flex-row gap-8 text-center md:text-left">
             {NAV_LINKS.map((link) => (
               <li key={link.name}>
-                <a 
-                  href={link.href} 
+                <Link 
+                  to={link.href} 
                   className="font-mono font-bold text-dim-grey hover:text-scoot-yellow transition-colors duration-200 md:text-base"
                 >
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

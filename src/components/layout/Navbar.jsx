@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { NAV_LINKS } from '../../constants/navigation';
 import Button from '../shared/Buttons';
 
@@ -22,25 +23,25 @@ export default function Navbar() {
         </button>
 
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 sm:static sm:translate-x-0 sm:translate-y-0">
-          <a href="/" className="block">
+          <Link to="/" className="block">
             <img
               src="/assets/logo/logo.svg"
               alt="Scoot Logo"
               className="h-7 w-auto"
             />
-          </a>
+          </Link>
         </div>
 
         <div className="hidden sm:flex items-center gap-14">
           <ul className="flex gap-8">
             {NAV_LINKS.map((link) => (
               <li key={link.name}>
-                <a
-                  href={link.href}
+                <Link
+                  to={link.href}
                   className="font-mono font-bold text-dim-grey hover:text-scoot-yellow transition-colors duration-200"
                 >
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -70,26 +71,26 @@ export default function Navbar() {
                   className="w-6 h-6"
                 />
               </button>
-              <a href="/" className="block">
+              <Link to="/" className="block">
                 <img
                   src="/assets/logo/logo.svg"
                   alt="Scoot Logo"
                   className="h-7 w-auto"
                 />
-              </a>
+              </Link>
               <div className="w-6" />
             </div>
 
             <nav className="space-y-8">
               {NAV_LINKS.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   className="block font-mono text-xl font-bold text-white hover:text-scoot-yellow transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -102,3 +103,4 @@ export default function Navbar() {
     </>
   );
 }
+

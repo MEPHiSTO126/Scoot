@@ -20,14 +20,14 @@ export default function Hero() {
       />
 
       
-      <div className="relative z-10 max-w-7xl mx-auto px-8 h-full flex flex-col justify-center items-center text-center sm:items-start sm:text-left">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 h-full flex flex-col justify-center items-center text-center lg:items-start lg:text-left">
         
         <h1 className="text-white mb-10 max-w-lg relative z-20">
           Scooter sharing made simple
         </h1>
         
        
-        <div className="relative w-full max-w-md mx-auto md:mx-0 md:ml-24 z-20">
+        <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:ml-24 z-20">
           <p className="text-white mb-10">
             Scoot takes the hassle out of urban mobility. Our bikes are placed in convenient 
             locations in each of our cities. Use our app to untether the ride and off you go!
@@ -36,7 +36,7 @@ export default function Hero() {
           <img
             src="/assets/patterns/right-arrow.svg"
             alt="Right arrow"
-            className="sm:hidden absolute left-[-35px] top-full mt-[-40px] -translate-x-1/2 w-60 h-auto"
+            className="md:hidden absolute left-[-35px] top-full mt-[-40px] -translate-x-1/2 w-60 h-auto z-0"
           />
 
           <div className="hidden lg:flex absolute top-4 left-[100%] ml-8 items-end w-[400px]">
@@ -52,6 +52,13 @@ export default function Hero() {
         <div className="w-16 h-16 rounded-full border-[3px] border-white"></div>
         <div className="w-16 h-16 rounded-full bg-white"></div>
       </div>
+
+      {/* Tablet Arrow Pattern */}
+      <img
+        src="/assets/patterns/right-arrow.svg"
+        alt="Right arrow"
+        className="hidden md:block lg:hidden absolute left-[-10vw] bottom-8 w-[60vw] h-auto z-0"
+      />
     </section>
   );
 }

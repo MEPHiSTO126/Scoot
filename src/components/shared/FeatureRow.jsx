@@ -11,14 +11,21 @@ export default function FeatureRow({
   useOuterPattern,
   patternVisibleOnMobile,
   hideBackgroundCircle,
+  hideButton,
+  buttonText = 'Learn More',
+  textAlignment,
+  paragraphAlignment,
 }) {
+  const containerTextClass = textAlignment ?? 'text-center lg:text-left';
+  const paragraphTextClass = `text-dim-grey font-sans font-normal text-[15px] leading-[25px] ${paragraphAlignment ?? 'text-center'}`;
+
   return (
     <div className="relative w-full overflow-hidden py-16 lg:py-24">
       
       {!hideBackgroundCircle && (
         <div 
-          className={`hidden lg:block absolute top-0 lg:top-1/2 lg:-translate-y-1/2 w-[445px] h-[445px] bg-light-grey rounded-full z-0 
-          ${isReversed ? 'left-[-50%] lg:left-0 lg:-translate-x-[75%]' : 'right-[-50%] lg:right-0 lg:translate-x-[75%]'}`}
+          className={`hidden md:block absolute top-0 md:top-[286px] lg:top-1/2 md:-translate-y-1/2 w-[29vw] h-[29vw] md:w-[445px] md:h-[445px] lg:w-[29vw] lg:h-[29vw] bg-light-grey rounded-full z-0 
+          ${isReversed ? 'md:left-0 md:-translate-x-[75%]' : 'md:right-0 md:translate-x-[75%]'}`}
         />
       )}
 
@@ -39,7 +46,7 @@ export default function FeatureRow({
       >
         
         {/* 1. Image Container (Placed FIRST in DOM so it stacks on top for Tablet/Mobile) */}
-        <div className="flex-1 relative flex justify-center w-full max-w-[445px] mx-auto lg:mx-0">
+        <div className="flex-1 relative flex justify-center w-full max-w-[311px] md:max-w-[445px] lg:max-w-[29vw] mx-auto lg:mx-0">
           <img 
             src={image} 
             alt={title} 
@@ -57,10 +64,10 @@ export default function FeatureRow({
         </div>
 
         {/* 2. Text Content (Placed SECOND in DOM so it drops below image on Tablet/Mobile) */}
-        <div className="flex-1 text-center lg:text-left max-w-[450px]">
+        <div className={`flex-1 ${containerTextClass} max-w-[450px]`}>
           <h2 className="mb-6">{title}</h2>
-          <p className="mb-10 text-dim-grey font-sans font-normal text-[15px] leading-[25px] text-center">{description}</p>
-          <Button>Learn More</Button>
+          <p className={`mb-10 ${paragraphTextClass}`}>{description}</p>
+          {!hideButton && <Button>{buttonText}</Button>}
         </div>
 
       </div>
@@ -78,6 +85,10 @@ FeatureRow.propTypes = {
   useOuterPattern: PropTypes.bool,
   patternVisibleOnMobile: PropTypes.bool,
   hideBackgroundCircle: PropTypes.bool,
+  hideButton: PropTypes.bool,
+  buttonText: PropTypes.string,
+  textAlignment: PropTypes.string,
+  paragraphAlignment: PropTypes.string,
 };
 
 FeatureRow.defaultProps = {
@@ -85,5 +96,9 @@ FeatureRow.defaultProps = {
   useOuterPattern: false,
   patternVisibleOnMobile: false,
   hideBackgroundCircle: false,
+  hideButton: false,
+  buttonText: 'Learn More',
+  textAlignment: undefined,
+  paragraphAlignment: undefined,
 };
 
