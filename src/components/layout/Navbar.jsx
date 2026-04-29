@@ -49,57 +49,66 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {isOpen && (
-        <div className="fixed inset-0 z-50 sm:hidden">
-          <button
-            type="button"
-            className="absolute inset-0 bg-black/50"
-            aria-label="Close menu"
-            onClick={() => setIsOpen(false)}
-          />
-          <div className="relative z-10 h-full w-[80vw] max-w-xs bg-[#29313f] text-white px-6 py-6">
-            <div className="flex items-center justify-between mb-12">
-              <button
-                type="button"
-                aria-label="Close Menu"
-                className="transition-transform hover:scale-110"
+      {/* Mobile Nav Overlay & Panel */}
+      <div 
+        className={`fixed inset-0 z-50 sm:hidden transition-all duration-300 ${
+          isOpen ? 'visible' : 'invisible pointer-events-none'
+        }`}
+      >
+        <button
+          type="button"
+          className={`absolute inset-0 bg-black/50 transition-opacity duration-300 cursor-default ${
+            isOpen ? 'opacity-100' : 'opacity-0'
+          }`}
+          aria-label="Close menu"
+          onClick={() => setIsOpen(false)}
+        />
+        <div 
+          className={`relative z-10 h-full w-[80vw] max-w-xs bg-[#29313f] text-white px-6 py-6 transition-transform duration-300 ${
+            isOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
+        >
+          <div className="flex items-center justify-between mb-12">
+            <button
+              type="button"
+              aria-label="Close Menu"
+              className="transition-transform hover:scale-110"
+              onClick={() => setIsOpen(false)}
+            >
+              <img
+                src="/assets/icons/ham-close.svg"
+                alt="Close menu"
+                className="w-6 h-6"
+              />
+            </button>
+            <Link to="/" className="block" onClick={() => setIsOpen(false)}>
+              <img
+                src="/assets/logo/logo.svg"
+                alt="Scoot Logo"
+                className="h-7 w-auto"
+              />
+            </Link>
+            <div className="w-6" />
+          </div>
+
+          <nav className="space-y-8">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.name}
+                to={link.href}
+                className="block font-mono text-xl font-bold text-white hover:text-scoot-yellow transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
-                <img
-                  src="/assets/icons/ham-close.svg"
-                  alt="Close menu"
-                  className="w-6 h-6"
-                />
-              </button>
-              <Link to="/" className="block">
-                <img
-                  src="/assets/logo/logo.svg"
-                  alt="Scoot Logo"
-                  className="h-7 w-auto"
-                />
+                {link.name}
               </Link>
-              <div className="w-6" />
-            </div>
+            ))}
+          </nav>
 
-            <nav className="space-y-8">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  className="block font-mono text-xl font-bold text-white hover:text-scoot-yellow transition-colors duration-200"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </nav>
-
-            <div className="mt-12">
-              <Button className="w-full">Get Scootin</Button>
-            </div>
+          <div className="mt-12" onClick={() => setIsOpen(false)}>
+            <Button className="w-full">Get Scootin</Button>
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 }
