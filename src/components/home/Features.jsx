@@ -9,7 +9,7 @@ const featuresData = [
     image: "/assets/images/telemetry.png", 
     pattern: "/assets/patterns/left-downward-arrow.svg",
     // Keep the arrow over the telemetry image and scale naturally to smaller screens.
-    patternPositionClasses: "w-[700px] top-[80px] left-[-5px] md:w-[700px] md:top-auto md:bottom-0 md:left-[-100px] lg:w-[50vw] lg:top-[33.6vh] lg:left-[-10.4vw] max-w-none",
+    patternPositionClasses: "w-[700px] top-[80px] left-[-5px] md:w-[735px] md:top-auto md:bottom-0 md:left-[-75px] lg:w-[50vw] lg:top-[33.6vh] lg:left-[-10.4vw] max-w-none",
     isReversed: false,
     useOuterPattern: false, // Inner pattern overlay on the image
     patternVisibleOnMobile: true,
@@ -21,7 +21,7 @@ const featuresData = [
     image: "/assets/images/city.png",
     pattern: "/assets/patterns/right-arrow.svg",
     // Fix: Pinned relative to the inner image wrapper
-    patternPositionClasses: "w-[90.8vw] left-[-100px] md:w-[350px] md:top-[20px] md:left-[-150px] lg:w-[22.8vw] lg:top-[20px] lg:left-[-11.7vw] max-w-none",
+    patternPositionClasses: "w-[90.8vw] left-[-100px] md:w-[368px] md:top-[20px] md:left-[-182px] lg:w-[22.8vw] lg:top-[20px] lg:left-[-11.7vw] max-w-none",
     isReversed: true, 
     useOuterPattern: false, // Make this an INNER pattern so it stays glued to the image
     patternVisibleOnMobile: true,

@@ -13,7 +13,7 @@ const aboutFeaturesData = [
     description: "Getting around should be simple (and even fun!) for everyone. We embrace technology to provide low cost, smart access to scooters at your fingertips.",
     image: "/assets/images/about-digital-era.png", 
     pattern: "/assets/patterns/left-upward-arrow.svg",
-    patternPositionClasses: "w-[90.6vw] top-[33.6vh] left-[-9.8vw] md:w-[280px] md:top-[-12px] md:left-[0px] lg:w-[50vw] lg:top-[33.6vh] lg:left-[-10.4vw] max-w-none",
+    patternPositionClasses: "w-[700px] top-[140px] left-[15px] md:w-[735px] md:top-auto md:bottom-0 md:left-[-75px] lg:w-[50vw] lg:top-[33.6vh] lg:left-[-10.4vw] max-w-none",
     isReversed: false,
     useOuterPattern: false,
     patternVisibleOnMobile: true,
@@ -24,9 +24,10 @@ const aboutFeaturesData = [
     description: "We're helping connect cities and bring people closer together. Our scooters are also fully-electric and we offset the minimal carbon footprint for each ride.",
     image: "/assets/images/about-urban-living.png",
     pattern: "/assets/patterns/right-arrow.svg",
-    patternPositionClasses: "top-[20px] left-[-150px] w-[350px] max-w-none",
+    patternPositionClasses: "top-[20px] left-[-45px] w-[350px] md:w-[368px] md:top-[20px] md:left-[-182px] max-w-none",
     isReversed: true,
     useOuterPattern: false,
+    patternVisibleOnMobile: true,
   }
 ];
 
@@ -46,8 +47,8 @@ export default function About() {
             key={feature.id}
             {...feature}
             hideButton
-            textAlignment="text-left"
-            paragraphAlignment="text-left"
+            textAlignment="text-center lg:text-left"
+            paragraphAlignment="text-center lg:text-left"
           />
         ))}
       </section>

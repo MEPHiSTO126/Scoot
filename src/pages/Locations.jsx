@@ -2,6 +2,7 @@
 import PageHero from '../components/shared/PageHero';
 import Button from '../components/shared/Buttons';
 import Cta from '../components/home/Cta';
+import LocationsMap from '../components/locations/LocationsMap';
 
 export default function Locations() {
   return (
@@ -13,12 +14,8 @@ export default function Locations() {
       />
 
       <section className="py-16 lg:py-24 max-w-7xl mx-auto px-8 mb-16 lg:mb-24">
-        {/* Map Image */}
-        <img 
-          src="/assets/images/map.png" 
-          alt="Map showing Scoot locations in New York, London, Yokohama, and Jakarta" 
-          className="w-full h-auto mb-20 lg:mb-32"
-        />
+        {/* Map Image Component */}
+        <LocationsMap />
 
         {/* Your City Not Listed Section */}
         <div className="flex flex-col lg:flex-row items-center justify-between text-center lg:text-left gap-8 lg:gap-12">

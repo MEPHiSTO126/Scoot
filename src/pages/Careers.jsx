@@ -21,7 +21,7 @@ export default function Careers() {
           description="We're always looking for ambitious individuals to help us on our journey. If you're passionate about our mission to provide clean, accessible transport to improve urban living we want to hear from you!"
           image="/assets/images/mission.png"
           pattern="/assets/patterns/left-downward-arrow.svg"
-          patternPositionClasses="w-[90.6vw] top-[33.6vh] left-[-9.8vw] md:w-[280px] md:top-[-12px] md:left-[0px] lg:w-[50vw] lg:top-[33.6vh] lg:left-[-10.4vw] max-w-none"
+          patternPositionClasses="w-[700px] top-[80px] left-[-5px] md:w-[735px] md:top-auto md:bottom-0 md:left-[-75px] lg:w-[50vw] lg:top-[33.6vh] lg:left-[-10.4vw] max-w-none"
           isReversed={false}
           useOuterPattern={false}
           patternVisibleOnMobile={true}
